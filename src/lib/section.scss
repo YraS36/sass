@@ -1,0 +1,35 @@
+
+@use './space.scss' as s;
+@use './var.scss' as var;
+
+.section{
+    display: flex;
+    justify-content: center;
+    padding: 0 s.space(4);
+    };
+    
+    $contentsizeMap: (
+        desktop: 1200px,
+        laptop: 1000px,
+        tablet: 800px,
+        mobile: 600px
+    );
+    
+    .section_content{
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 s.space(4);
+    
+        @each $kay, $value in var.$screnMap{
+            @media all and (width < $value){
+             max-width: map-get($contentsizeMap, $kay)
+            }
+        }
+    }
+    .section_double{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @media all and (width < scren('tablet')){
+           grid-template-columns: 1fr;
+        }
+    }
