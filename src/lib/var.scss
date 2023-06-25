@@ -1,0 +1,39 @@
+$colorMap:(
+    background: #F5F5F7,
+    backgroundDark: #454545,
+    whiteLite: #DADADA,
+    linkColor: #0066CC,
+    fontDark: #1D1D1F,
+    prymary: #0066CC,
+    text:#1D1D1F,
+    backgraundfooter:#F5F5F7,
+    textLight:#424245
+);
+
+@function color ($kay) {
+    @return map-get($colorMap, $kay );
+}
+
+
+$sizeMap:(
+    default: 16px,
+    smoll: 12px
+);
+
+@function size ($kay: 'default') {
+    @return map-get($sizeMap, $kay );
+}
+
+$screnMap: (
+    desktop: 1440px,
+    laptop: 1260px,
+    tablet: 1000px,
+    mobile: 820px
+);
+
+@function scren ($kay: 'default') {
+    @return map-get ($screnMap, $kay );
+}
+
+
+
